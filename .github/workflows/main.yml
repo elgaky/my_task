@@ -1,1 +1,28 @@
+name: mohamed
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Testing Githup action'
+      run: pwd
+
+    - name: 'Testing printing'
+      run: echo mohamed
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: Build Docker image
+      run: docker build -t yourusername/myapp:latest .
+      working-directory: ./path/to/dockerfile-directory
+
+    - name: Push Docker image
+      run: docker push yourusername/myapp:latest
 
