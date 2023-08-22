@@ -10,10 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 'Testing Githup action'
-      run: pwd
+    - name: 'Printing folder contents'
+      run: ls
 
-    - name: 'Testing printing'
-      run: echo mohamed
+    
       
 
